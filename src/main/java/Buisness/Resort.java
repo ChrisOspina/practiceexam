@@ -16,6 +16,7 @@ public class Resort {
     private String name;
     @SerializedName("Rooms:")
     private Room[] rooms;
+  
     
     
     

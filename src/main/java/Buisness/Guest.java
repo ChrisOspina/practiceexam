@@ -60,5 +60,12 @@ public class Guest {
        String jsonString = gson.toJson(this);
        ps.println(jsonString);
     }
+    @Override
+    public String toString()
+    {
+        String s = name + "\n" + "Age:"+age+ "\n"
+                + "Id:" + age;
+        return s;
+    }
    
 }
