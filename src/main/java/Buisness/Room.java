@@ -16,9 +16,7 @@ import java.io.PrintStream;
  * @author cospina
  */
 public class Room {
-    @SerializedName("Room #:")
     private int number;
-    @SerializedName("Room fee:")
     private double fee;
     
     public Room(){};
@@ -31,26 +29,7 @@ public class Room {
     public void setfee(double f){fee = f;}
     public int getNum(){return number;}
     public double getFee(){return fee;}
-     public void ReadJSON(FileReader fr)
-     {
-       GsonBuilder builder = new GsonBuilder();
-       builder.setPrettyPrinting();
-       Gson gson = builder.create();
-       
-       Room r = gson.fromJson(fr, Room.class);
-       
-       this.setNum(r.getNum());
-       this.setfee(r.getFee());
-     }
-     public void WriteJSON(PrintStream ps)
-     {
-       GsonBuilder builder = new GsonBuilder();
-       builder.setPrettyPrinting();
-       Gson gson = builder.create();
-       
-       String jsonString = gson.toJson(this);
-       ps.println(jsonString);
-     }
+ 
      @Override
      public String toString()
      {
