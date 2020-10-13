@@ -7,6 +7,8 @@ package com.ospina.practiceexam;
 
 import Buisness.Guest;
 import Buisness.Resort;
+import Buisness.Room;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.PrintStream;
@@ -20,16 +22,22 @@ public class Main {
     public static void main(String args[]) throws FileNotFoundException
     {
         int days = 0;
+        int rmindex = 0;
+        double total = 0.00;
         
         Guest g = new Guest();
-        Resort r = new Resort();
+        Resort h = new Resort();
+        Room r = new Room();
         
         Scanner keypad = new Scanner(System.in);
         Scanner in = new Scanner(System.in);
-        String inname;
         
         String injson;
         String outjson;
+        String inname = null;
+        
+        File infileTemp = new File(inname);
+        Scanner infile = new Scanner(infileTemp);
         
         System.out.println("Welcome to Walt Disney World Resorts");
         System.out.println("------------------------------------");
@@ -39,7 +47,7 @@ public class Main {
         System.out.println("4 - Calculate your total vacation expense");
         System.out.println("5 - Display any rooms you've selected");
         System.out.println("6 - Cancel");
-        
+       
         int choice = 0; 
         while (choice !=6)
         {
@@ -60,19 +68,24 @@ public class Main {
                   break;
                 case 3: 
                     System.out.println("What hotel would you like to check into");
-                    r.setName(in.nextLine());
+                    h.setName(in.nextLine());
                     System.out.println("How many days are you staying");
                     days = in.nextInt();
+                    System.out.println("Choose an index 0-4");
+                    rmindex = in.nextInt();
                     System.out.println("Please show us your reservation");
                     inname = in.nextLine();
-                    
+                    r.setNum(infile.nextInt());
+                    r.setfee(infile.nextFloat());
+                    h.setRoom(rmindex, r);
+                    System.out.println("Your room is ready");
                     break;
                 case 4:
-                    int total = days*r.getRoom(i).fee();
+                    total = days*r.getFee();
                     System.out.printf("Your total is" + "%.2f",total);
                     break;
                 case 5:
-                    r.display();
+                    h.display();
                     break;
                 case 6:
                     System.out.println("See ya Real Soon!");
