@@ -1,5 +1,10 @@
 {
     "Name" : "Christopher Ospina",
     "Guest id": 18383,
-    "Age"  : 20
+    "Age"  : 20,
+    "D.O.B": {
+        "month" : 11,
+        "day" : 4,
+        "year": 1999
+    }
 }

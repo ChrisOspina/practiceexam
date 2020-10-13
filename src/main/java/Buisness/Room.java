@@ -43,17 +43,6 @@ public class Room {
        this.setNum(r.getNum());
        this.setfee(r.getFee());
     }
- 
-     @Override
-     public String toString()
-     {
-         String s = "Room: " + number + "\n"+
-               "Fee: "+ fee;
-         return s;
-     }
-     
-     
-    
     
        
 }
