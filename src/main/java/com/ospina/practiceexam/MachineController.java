@@ -5,19 +5,15 @@
  */
 package com.ospina.practiceexam;
 
-import java.io.FileNotFoundException;
-import javafx.application.Application;
-
-
+import Buisness.DebitCard;
 
 /**
  *
  * @author cospina
  */
-public class Main {
-    public static void main(String args[]) throws FileNotFoundException
-    {
-       Application.launch(MachineApplication.class, args);
-    }
+public class MachineController 
+{
+    DebitCard d = new DebitCard();
+    
+    
 }
-
