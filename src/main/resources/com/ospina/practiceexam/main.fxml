@@ -6,25 +6,23 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" 
-            minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" 
-            style="-fx-background-color: aqua;" 
-            xmlns="http://javafx.com/javafx/11.0.1" 
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.ospina.practiceexam.MachineController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: aqua;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospina.practiceexam.MachineController">
    <children>
       <MenuBar layoutY="1.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-                  <MenuItem id="openmenuitem" mnemonicParsing="false" text="Open" />
-                  <MenuItem id="saveasmenuitem" mnemonicParsing="false" text="Save As" />
-                  <MenuItem id="savemenuitem" mnemonicParsing="false" text="Save" />
-              <MenuItem id="closemenuitem" mnemonicParsing="false" text="Close" />
+                  <MenuItem fx:id="openmenuitem" mnemonicParsing="false" onAction="#handleopenaction" text="Open" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="saveasmenuitem" mnemonicParsing="false" onAction="#handlesaveasaction" text="Save As" />
+                  <MenuItem fx:id="savemenuitem" mnemonicParsing="false" onAction="#handlesaveaction" text="Save" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem fx:id="closemenuitem" mnemonicParsing="false" onAction="#handleexit" text="Close" />
             </items>
           </Menu>
         </menus>
@@ -35,22 +33,22 @@
             <Font name="Britannic Bold" size="34.0" />
          </font>
       </Label>
-      <Button id="depositbtn" layoutX="329.0" layoutY="96.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="126.0" text="Deposit">
+      <Button fx:id="depositbtn" layoutX="329.0" layoutY="96.0" mnemonicParsing="false" onAction="#handledepositaction" prefHeight="35.0" prefWidth="126.0" text="Deposit">
          <font>
             <Font name="Arial Black" size="12.0" />
          </font></Button>
-      <Button id="withdrawbtn" layoutX="116.0" layoutY="96.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="118.0" text="Withdraw">
+      <Button fx:id="withdrawbtn" layoutX="116.0" layoutY="96.0" mnemonicParsing="false" onAction="#handlewithdrawaction" prefHeight="35.0" prefWidth="118.0" text="Withdraw">
          <font>
             <Font name="Arial Black" size="12.0" />
          </font></Button>
-      <Button id="checkbalbtn" layoutX="117.0" layoutY="157.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="117.0" text="Check Balance">
+      <Button fx:id="checkbalbtn" layoutX="117.0" layoutY="157.0" mnemonicParsing="false" onAction="#handlecheckbal" prefHeight="35.0" prefWidth="117.0" text="Check Balance">
          <font>
             <Font name="Arial Black" size="12.0" />
          </font></Button>
-      <Button id="exitbtn" layoutX="329.0" layoutY="157.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="126.0" text="Exit">
+      <Button fx:id="exitbtn" layoutX="329.0" layoutY="157.0" mnemonicParsing="false" onAction="#handleexit" prefHeight="35.0" prefWidth="126.0" text="Exit">
          <font>
             <Font name="Arial Black" size="12.0" />
          </font></Button>
-      <TextArea id="txtarea" layoutX="209.0" layoutY="208.0" prefHeight="144.0" prefWidth="155.0" />
+      <TextArea fx:id="txtarea" layoutX="209.0" layoutY="208.0" prefHeight="144.0" prefWidth="155.0" />
    </children>
 </AnchorPane>
