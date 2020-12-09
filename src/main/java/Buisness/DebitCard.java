@@ -9,6 +9,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.SerializedName;
 import java.io.FileReader;
+import java.io.PrintStream;
 
 /**
  *
@@ -54,12 +55,7 @@ public class DebitCard
     public void Withdraw(double amt)
     {
         balance = balance - amt;
-    }
-    
-    public void showbalance()
-    {
-       System.out.printf("Your balance is $ %.2f\n",balance);
-    }
+    }   
     
     public void readJSON(FileReader fr) {
         //***********************
@@ -79,6 +75,26 @@ public class DebitCard
         account = dc.account;
         this.setCardNum(dc.getCardNum());
         this.setbalance(dc.getbalance());
+    }
+    
+     public void writeJSON(PrintStream ps) 
+     {
+        GsonBuilder builder = new GsonBuilder();
+        builder.setPrettyPrinting();
+        Gson gson = builder.create();      
+        String jsonString = gson.toJson(this);
+        ps.println(jsonString);
+    }
+    
+    public void print(PrintStream ps)
+    {
+        ps.println("ATM Transaction Report");
+        ps.println("-----------------------");
+        ps.println(account.getUserName());
+        ps.printf("Account id:%d\n",account.getNum());
+        ps.printf("Card#: %s\n",cardnumber);
+        ps.printf("Current Balance: %.2f\n",balance);
+        
     }
     
     @Override

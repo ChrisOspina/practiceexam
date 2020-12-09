@@ -6,6 +6,10 @@
 package com.ospina.practiceexam;
 
 import Buisness.DebitCard;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextArea;
 
 /**
  *
@@ -13,7 +17,36 @@ import Buisness.DebitCard;
  */
 public class MachineController 
 {
-    DebitCard d = new DebitCard();
+   private DebitCard d = new DebitCard();
+   
+   @FXML
+   private MenuItem openmenuitem;
+   
+   @FXML
+   private MenuItem saveasmenuitem;
+   
+   @FXML
+   private MenuItem savemenuitem;
+   
+   @FXML
+   private MenuItem closemenuitem;
+   
+   @FXML
+   private Button depositbtn;
+   
+   @FXML
+   private Button withdrawbtn;
+   
+   @FXML
+   private Button checkbalbtn;
+   
+   @FXML
+   private Button exitbtn;
+   
+   @FXML
+   private TextArea txtarea;
+   
+   
     
     
 }
