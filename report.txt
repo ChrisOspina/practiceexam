@@ -1,6 +1,6 @@
 ATM Transaction Report
 -----------------------
 Christopher Ospina
-Account id:2000
+Account id: 2000
 Card#: 4571 2340
 Current Balance: 4502.75

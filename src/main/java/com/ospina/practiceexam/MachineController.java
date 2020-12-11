@@ -64,7 +64,7 @@ public class MachineController
            d.readJSON(fr);
            txtarea.setText("Read succesful");
        }
-      catch(Exception e) 
+        catch(Exception e) 
        {
            txtarea.setText("File read failure");
        }
@@ -75,7 +75,7 @@ public class MachineController
    protected void handlesaveasaction() throws FileNotFoundException
    {
        FileChooser fileChooser = new FileChooser();
-       fileChooser.setTitle("Save as TimeSheet");
+       fileChooser.setTitle("Save as JSON receipt");
        File file = fileChooser.showOpenDialog(null);
        PrintStream ps = new PrintStream(file);
        d.writeJSON(ps);
@@ -86,7 +86,7 @@ public class MachineController
    protected void handlesaveaction() throws FileNotFoundException
    {
        FileChooser fileChooser = new FileChooser();
-       fileChooser.setTitle("Save as TimeSheet");
+       fileChooser.setTitle("Save receipt");
        File file = fileChooser.showOpenDialog(null);
        PrintStream ps = new PrintStream(file);
        d.print(ps);

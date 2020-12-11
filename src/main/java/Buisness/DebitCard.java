@@ -81,7 +81,7 @@ public class DebitCard
         ps.println("ATM Transaction Report");
         ps.println("-----------------------");
         ps.println(account.getUserName());
-        ps.printf("Account id:%d\n",account.getNum());
+        ps.printf("Account id: %d\n",account.getNum());
         ps.printf("Card#: %s\n",cardnumber);
         ps.printf("Current Balance: %.2f\n",balance);
         
@@ -98,9 +98,10 @@ public class DebitCard
     
     @Override
     public boolean equals(Object obj) {
-        DebitCard other = (DebitCard) obj; // Copy to Employee var
+        DebitCard other = (DebitCard) obj;
         if (this.account.equals(other.account) == false) {
-            return false;}
+            return false;
+        }
         return true;
     }
 }
