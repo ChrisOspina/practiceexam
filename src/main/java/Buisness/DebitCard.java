@@ -58,20 +58,10 @@ public class DebitCard
     }   
     
     public void readJSON(FileReader fr) {
-        //***********************
-        //In order to read to JSON we need a new instance
-        //of GSONBuilder. We also need to call the setPrettyPrinting
-        //and create methods while we are at it
-        //********************************************
         GsonBuilder builder = new GsonBuilder();
         builder.setPrettyPrinting();
         Gson gson = builder.create();
-        //******************************************
-        //We then must create an instance of MyDate in order to use as
-        //a refrence for the JSON file to read
-        //****************************************
         DebitCard dc = gson.fromJson(fr, DebitCard.class);
-        //Finally we will set each member variable to the returned values from get
         account = dc.account;
         this.setCardNum(dc.getCardNum());
         this.setbalance(dc.getbalance());

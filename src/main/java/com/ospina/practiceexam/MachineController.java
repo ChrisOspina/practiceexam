@@ -55,12 +55,20 @@ public class MachineController
    @FXML
    protected void handleopenaction() throws FileNotFoundException
    {
-       FileChooser filechooser = new FileChooser();
-       filechooser.setTitle("Open debit card JSON file");
-       File file = filechooser.showOpenDialog(null);
-       FileReader fr = new FileReader(file);
-       d.readJSON(fr);
-       txtarea.setText("Read succesful");
+       try
+       {
+           FileChooser filechooser = new FileChooser();
+           filechooser.setTitle("Open debit card JSON file");
+           File file = filechooser.showOpenDialog(null);
+           FileReader fr = new FileReader(file);
+           d.readJSON(fr);
+           txtarea.setText("Read succesful");
+       }
+      catch(Exception e) 
+       {
+           txtarea.setText("File read failure");
+       }
+     
    }
    
    @FXML
@@ -99,7 +107,7 @@ public class MachineController
        System.out.println("How much would you like to deposit?");
        depositamt = in.nextFloat();
        d.Deposit(depositamt);
-       System.out.println("deposit complete");
+       txtarea.setText("deposit complete");
    }
    
    @FXML
@@ -110,7 +118,7 @@ public class MachineController
        System.out.println("How much would you like to withdraw?");
        withdrawamt = in.nextFloat();
        d.Withdraw(withdrawamt);
-       System.out.println("withdraw complete");
+       txtarea.setText("withdraw complete");
    }
    
    @FXML
